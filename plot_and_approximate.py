@@ -84,7 +84,7 @@ def generate_approximate_data(data, scale=3, center=(20, 20), grid_size=10):
                     break
     return approximated_data.astype('float')
 
-file_path = '/home/horibe/workspace/perception-performance-approximation/data/tp_rate.csv'  # Replace with your file path
+file_path = '/home/horibe/workspace/perception_fitting/data/tp_rate.csv'  # Replace with your file path
 data = load_csv(file_path)
 
 # Plotting
