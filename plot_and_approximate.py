@@ -2,7 +2,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-a = 0.6
 b = 1.0
 
 r_range = [10, 20, 40, 60, 80, 120, 150, 180, 1000]
@@ -36,7 +35,7 @@ def plot_heat_map(data, ax, title):
     ax.set_ylabel('Y (m)')
 
 
-def calculate_distance_from_center(i, j, center=(20, 20), grid_size=10):
+def calculate_distance_from_center(i, j, center=(20, 20), grid_size=10, a=1.0):
     x = (j - center[1]) * grid_size
     y = (i - center[0]) * grid_size
 
@@ -63,7 +62,7 @@ def calculate_distances(data, center=(20, 20), grid_size=10):
     return v_range_average
 
 
-def generate_approximate_data(data, scale=3, center=(20, 20), grid_size=10):
+def generate_approximate_data(data, scale=1, center=(20, 20), grid_size=10, a=1.0):
     values = calculate_distances(data)
 
     new_shape = (data.shape[0] * scale, data.shape[1] * scale)
@@ -78,20 +77,56 @@ def generate_approximate_data(data, scale=3, center=(20, 20), grid_size=10):
     print(f"center*scale = {center*scale}, grid_size/scale = {grid_size/scale}")
     for i in range(approximated_data.shape[0]):
         for j in range(approximated_data.shape[1]):
-            distance = calculate_distance_from_center(i, j, center=scaled_center, grid_size=scaled_grid)
+            distance = calculate_distance_from_center(i, j, center=scaled_center, grid_size=scaled_grid, a=a)
             for ir, r in enumerate(r_range):
                 if distance < r:
                     approximated_data.iat[i, j] = values[ir]
                     break
     return approximated_data.astype('float')
 
+
+def calculate_accuracy(original_data, approximated_data):
+    total_diff = 0
+    count = 0
+    for i in range(original_data.shape[0]):
+        for j in range(original_data.shape[1]):
+            if not pd.isna(original_data.iat[i, j]):
+                total_diff += abs(original_data.iat[i, j] - approximated_data.iat[i, j])
+                count += 1
+    return total_diff / count if count > 0 else float('inf')
+
+
+def find_best_a(data):
+    best_a = None
+    best_accuracy = float('inf')
+    for a_val in np.arange(0.1, 2.1, 0.1):  # Iterating from 0.1 to 1.0
+        approximated_data = generate_approximate_data(data=data, scale=1, a=a_val)
+        accuracy = calculate_accuracy(data, approximated_data)
+        print(f"accuracy = {accuracy}, best_accuracy = {best_accuracy}, a = {a_val}")
+        if accuracy < best_accuracy:
+            best_accuracy = accuracy
+            best_a = a_val
+    return best_a, best_accuracy
+
+
+
+# file_path = '/home/horibe/workspace/perception_fitting/data/tp_rate.csv'  # Replace with your file path
+# file_path = '/home/horibe/workspace/perception_fitting/data/dist_error_mean.csv'  # Replace with your file path
+# file_path = '/home/horibe/workspace/perception_fitting/data/dist_error_std.csv'  # Replace with your file path
+# file_path = '/home/horibe/workspace/perception_fitting/data/yaw_error_mean.csv'  # Replace with your file path
 file_path = '/home/horibe/workspace/perception_fitting/data/yaw_error_std.csv'  # Replace with your file path
 data = load_csv(file_path)
+
+best_a, best_accuracy = find_best_a(data)
 
 # Plotting
 fig, axs = plt.subplots(1, 2, figsize=(12, 6))
 plot_heat_map(data, axs[0], "Original Data")
-approximated_data = generate_approximate_data(data)
+approximated_data = generate_approximate_data(data, a=best_a)
 plot_heat_map(approximated_data, axs[1], "Approximated Data")
-plt.suptitle('yaw error std [rad]')
+# plt.suptitle(f'TP rate (a={best_a:.2f})')
+# plt.suptitle(f'dist error mean [m] (a={best_a:.1f})')
+# plt.suptitle(f'dist error std [m] (a={best_a:.1f})')
+# plt.suptitle(f'Yaw error mean [rad] (a={best_a:.1f})')
+plt.suptitle(f'Yaw error std [rad] (a={best_a:.1f})')
 plt.show()
