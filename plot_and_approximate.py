@@ -2,22 +2,23 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-a = 0.4
+a = 0.6
 b = 1.0
 
 r_range = [10, 20, 40, 60, 80, 120, 150, 180, 1000]
 
 def load_csv(file_path):
-    data = pd.read_csv(file_path, header=None, skiprows=1, usecols=range(1, 42))
+    data = pd.read_csv(file_path, header=None)
+    # data = pd.read_csv(file_path, header=None, skiprows=1, usecols=range(1, 42))
     
     # Check if data is 41x41 after skipping the first row and column
     if data.shape != (41, 41):
         raise ValueError("CSV file does not contain 40x40 data after skipping the first row and column")
     
-    for i in range(data.shape[0]):
-        for j in range(data.shape[1]):
-            if pd.isna(data.iat[i, j]):
-                data.iat[i, j] = 0.0
+    # for i in range(data.shape[0]):
+    #     for j in range(data.shape[1]):
+    #         if pd.isna(data.iat[i, j]):
+    #             data.iat[i, j] = 0.0
 
     return data
 
@@ -84,7 +85,7 @@ def generate_approximate_data(data, scale=3, center=(20, 20), grid_size=10):
                     break
     return approximated_data.astype('float')
 
-file_path = '/home/horibe/workspace/perception_fitting/data/tp_rate.csv'  # Replace with your file path
+file_path = '/home/horibe/workspace/perception_fitting/data/yaw_error_std.csv'  # Replace with your file path
 data = load_csv(file_path)
 
 # Plotting
@@ -92,5 +93,5 @@ fig, axs = plt.subplots(1, 2, figsize=(12, 6))
 plot_heat_map(data, axs[0], "Original Data")
 approximated_data = generate_approximate_data(data)
 plot_heat_map(approximated_data, axs[1], "Approximated Data")
-plt.suptitle('TP Rate')
+plt.suptitle('yaw error std [rad]')
 plt.show()
