@@ -1,0 +1,608 @@
+yaw_flip's Statics:
+                        mean: 0.119
+                        count: 53098
+yaw_err's Statics:
+                        mean: -0.005
+                        count: 127676
+dist_err's Statics:
+                        mean: -0.201
+                        count: 150317
+tp's Statics:
+                        mean: 0.466
+                        count: 277397
+tp_10m's Statics:
+                        mean: 0.885
+                        count: 6506
+tp_20m's Statics:
+                        mean: 0.819
+                        count: 20177
+tp_40m's Statics:
+                        mean: 0.578
+                        count: 73854
+tp_60m's Statics:
+                        mean: 0.583
+                        count: 62522
+tp_80m's Statics:
+                        mean: 0.407
+                        count: 49292
+tp_120m's Statics:
+                        mean: 0.179
+                        count: 42085
+tp_1000m's Statics:
+                        mean: 0.015
+                        count: 22961
+yaw_err's AR(1) model Statics:
+                        var: 0.037
+yaw_err's parameters for time_interval 0.5 
+                         phi: 0.434
+                         sigma2: 0.03
+                         count: 91669
+yaw_err's parameters for time_interval 1.0 
+                         phi: 0.384
+                         sigma2: 0.032
+                         count: 80275
+yaw_err's parameters for time_interval 1.5 
+                         phi: 0.34
+                         sigma2: 0.033
+                         count: 74129
+yaw_err's parameters for time_interval 2.0 
+                         phi: 0.318
+                         sigma2: 0.034
+                         count: 68223
+yaw_err's parameters for time_interval 2.5 
+                         phi: 0.294
+                         sigma2: 0.034
+                         count: 63703
+yaw_err's parameters for time_interval 3.0 
+                         phi: 0.272
+                         sigma2: 0.035
+                         count: 59879
+yaw_err's parameters for time_interval 3.5 
+                         phi: 0.261
+                         sigma2: 0.035
+                         count: 56319
+yaw_err's parameters for time_interval 4.0 
+                         phi: 0.254
+                         sigma2: 0.035
+                         count: 52796
+yaw_err's parameters for time_interval 4.5 
+                         phi: 0.239
+                         sigma2: 0.035
+                         count: 48955
+
+
+dist_err's AR(1) model Statics:
+                        var: 1.189
+dist_err's parameters for time_interval 0.5 
+                         phi: 0.596
+                         sigma2: 0.767
+                         count: 110422
+dist_err's parameters for time_interval 1.0 
+                         phi: 0.503
+                         sigma2: 0.888
+                         count: 96595
+dist_err's parameters for time_interval 1.5 
+                         phi: 0.458
+                         sigma2: 0.94
+                         count: 89187
+dist_err's parameters for time_interval 2.0 
+                         phi: 0.426
+                         sigma2: 0.973
+                         count: 82195
+dist_err's parameters for time_interval 2.5 
+                         phi: 0.4
+                         sigma2: 0.999
+                         count: 76798
+dist_err's parameters for time_interval 3.0 
+                         phi: 0.373
+                         sigma2: 1.023
+                         count: 72139
+dist_err's parameters for time_interval 3.5 
+                         phi: 0.357
+                         sigma2: 1.038
+                         count: 68053
+dist_err's parameters for time_interval 4.0 
+                         phi: 0.329
+                         sigma2: 1.06
+                         count: 63774
+dist_err's parameters for time_interval 4.5 
+                         phi: 0.301
+                         sigma2: 1.081
+                         count: 58991
+
+
+yaw_flip's Markov Chain model Statics:
+yaw_flip's parameters for time_interval 0.5 
+                         keep_deactive_rate(p00): 0.979
+                         keep_active_rate(p11): 0.803
+                         rho: 0.782
+                         deactive_count: 31704
+                         active_count: 3300
+yaw_flip's parameters for time_interval 1.0 
+                         keep_deactive_rate(p00): 0.978
+                         keep_active_rate(p11): 0.783
+                         rho: 0.761
+                         deactive_count: 27200
+                         active_count: 2682
+yaw_flip's parameters for time_interval 1.5 
+                         keep_deactive_rate(p00): 0.978
+                         keep_active_rate(p11): 0.764
+                         rho: 0.742
+                         deactive_count: 25044
+                         active_count: 2462
+yaw_flip's parameters for time_interval 2.0 
+                         keep_deactive_rate(p00): 0.977
+                         keep_active_rate(p11): 0.752
+                         rho: 0.729
+                         deactive_count: 22929
+                         active_count: 2205
+yaw_flip's parameters for time_interval 2.5 
+                         keep_deactive_rate(p00): 0.976
+                         keep_active_rate(p11): 0.75
+                         rho: 0.727
+                         deactive_count: 21392
+                         active_count: 1987
+yaw_flip's parameters for time_interval 3.0 
+                         keep_deactive_rate(p00): 0.977
+                         keep_active_rate(p11): 0.726
+                         rho: 0.703
+                         deactive_count: 20071
+                         active_count: 1754
+yaw_flip's parameters for time_interval 3.5 
+                         keep_deactive_rate(p00): 0.974
+                         keep_active_rate(p11): 0.714
+                         rho: 0.689
+                         deactive_count: 18859
+                         active_count: 1632
+yaw_flip's parameters for time_interval 4.0 
+                         keep_deactive_rate(p00): 0.975
+                         keep_active_rate(p11): 0.711
+                         rho: 0.686
+                         deactive_count: 17663
+                         active_count: 1467
+yaw_flip's parameters for time_interval 4.5 
+                         keep_deactive_rate(p00): 0.975
+                         keep_active_rate(p11): 0.691
+                         rho: 0.666
+                         deactive_count: 16264
+                         active_count: 1290
+tp's Markov Chain model Statics:
+tp's parameters for time_interval 0.5 
+                         keep_deactive_rate(p00): 0.875
+                         keep_active_rate(p11): 0.858
+                         rho: 0.733
+                         deactive_count: 118990
+                         active_count: 108173
+tp's parameters for time_interval 1.0 
+                         keep_deactive_rate(p00): 0.848
+                         keep_active_rate(p11): 0.838
+                         rho: 0.686
+                         deactive_count: 99723
+                         active_count: 96904
+tp's parameters for time_interval 1.5 
+                         keep_deactive_rate(p00): 0.829
+                         keep_active_rate(p11): 0.825
+                         rho: 0.654
+                         deactive_count: 90400
+                         active_count: 90805
+tp's parameters for time_interval 2.0 
+                         keep_deactive_rate(p00): 0.812
+                         keep_active_rate(p11): 0.813
+                         rho: 0.624
+                         deactive_count: 82460
+                         active_count: 84702
+tp's parameters for time_interval 2.5 
+                         keep_deactive_rate(p00): 0.797
+                         keep_active_rate(p11): 0.803
+                         rho: 0.6
+                         deactive_count: 76125
+                         active_count: 79968
+tp's parameters for time_interval 3.0 
+                         keep_deactive_rate(p00): 0.78
+                         keep_active_rate(p11): 0.793
+                         rho: 0.574
+                         deactive_count: 70013
+                         active_count: 76042
+tp's parameters for time_interval 3.5 
+                         keep_deactive_rate(p00): 0.767
+                         keep_active_rate(p11): 0.785
+                         rho: 0.552
+                         deactive_count: 65502
+                         active_count: 72375
+tp's parameters for time_interval 4.0 
+                         keep_deactive_rate(p00): 0.758
+                         keep_active_rate(p11): 0.778
+                         rho: 0.536
+                         deactive_count: 61056
+                         active_count: 68371
+tp's parameters for time_interval 4.5 
+                         keep_deactive_rate(p00): 0.745
+                         keep_active_rate(p11): 0.771
+                         rho: 0.516
+                         deactive_count: 55279
+                         active_count: 63817
+tp_10m's Markov Chain model Statics:
+tp_10m's parameters for time_interval 0.5 
+                         keep_deactive_rate(p00): 0.798
+                         keep_active_rate(p11): 0.969
+                         rho: 0.767
+                         deactive_count: 866
+                         active_count: 4890
+tp_10m's parameters for time_interval 1.0 
+                         keep_deactive_rate(p00): 0.724
+                         keep_active_rate(p11): 0.963
+                         rho: 0.687
+                         deactive_count: 764
+                         active_count: 4542
+tp_10m's parameters for time_interval 1.5 
+                         keep_deactive_rate(p00): 0.681
+                         keep_active_rate(p11): 0.963
+                         rho: 0.644
+                         deactive_count: 711
+                         active_count: 4325
+tp_10m's parameters for time_interval 2.0 
+                         keep_deactive_rate(p00): 0.647
+                         keep_active_rate(p11): 0.962
+                         rho: 0.609
+                         deactive_count: 674
+                         active_count: 4088
+tp_10m's parameters for time_interval 2.5 
+                         keep_deactive_rate(p00): 0.663
+                         keep_active_rate(p11): 0.957
+                         rho: 0.619
+                         deactive_count: 649
+                         active_count: 3925
+tp_10m's parameters for time_interval 3.0 
+                         keep_deactive_rate(p00): 0.686
+                         keep_active_rate(p11): 0.953
+                         rho: 0.639
+                         deactive_count: 617
+                         active_count: 3760
+tp_10m's parameters for time_interval 3.5 
+                         keep_deactive_rate(p00): 0.679
+                         keep_active_rate(p11): 0.948
+                         rho: 0.627
+                         deactive_count: 567
+                         active_count: 3639
+tp_10m's parameters for time_interval 4.0 
+                         keep_deactive_rate(p00): 0.715
+                         keep_active_rate(p11): 0.939
+                         rho: 0.654
+                         deactive_count: 509
+                         active_count: 3461
+tp_10m's parameters for time_interval 4.5 
+                         keep_deactive_rate(p00): 0.701
+                         keep_active_rate(p11): 0.933
+                         rho: 0.634
+                         deactive_count: 445
+                         active_count: 3286
+tp_20m's Markov Chain model Statics:
+tp_20m's parameters for time_interval 0.5 
+                         keep_deactive_rate(p00): 0.732
+                         keep_active_rate(p11): 0.929
+                         rho: 0.662
+                         deactive_count: 3621
+                         active_count: 13995
+tp_20m's parameters for time_interval 1.0 
+                         keep_deactive_rate(p00): 0.692
+                         keep_active_rate(p11): 0.92
+                         rho: 0.612
+                         deactive_count: 3243
+                         active_count: 12839
+tp_20m's parameters for time_interval 1.5 
+                         keep_deactive_rate(p00): 0.679
+                         keep_active_rate(p11): 0.914
+                         rho: 0.593
+                         deactive_count: 3039
+                         active_count: 12169
+tp_20m's parameters for time_interval 2.0 
+                         keep_deactive_rate(p00): 0.656
+                         keep_active_rate(p11): 0.906
+                         rho: 0.563
+                         deactive_count: 2812
+                         active_count: 11405
+tp_20m's parameters for time_interval 2.5 
+                         keep_deactive_rate(p00): 0.641
+                         keep_active_rate(p11): 0.899
+                         rho: 0.54
+                         deactive_count: 2555
+                         active_count: 10814
+tp_20m's parameters for time_interval 3.0 
+                         keep_deactive_rate(p00): 0.614
+                         keep_active_rate(p11): 0.895
+                         rho: 0.508
+                         deactive_count: 2365
+                         active_count: 10231
+tp_20m's parameters for time_interval 3.5 
+                         keep_deactive_rate(p00): 0.618
+                         keep_active_rate(p11): 0.881
+                         rho: 0.499
+                         deactive_count: 2168
+                         active_count: 9789
+tp_20m's parameters for time_interval 4.0 
+                         keep_deactive_rate(p00): 0.63
+                         keep_active_rate(p11): 0.872
+                         rho: 0.501
+                         deactive_count: 2028
+                         active_count: 9328
+tp_20m's parameters for time_interval 4.5 
+                         keep_deactive_rate(p00): 0.66
+                         keep_active_rate(p11): 0.867
+                         rho: 0.527
+                         deactive_count: 1830
+                         active_count: 8745
+tp_40m's Markov Chain model Statics:
+tp_40m's parameters for time_interval 0.5 
+                         keep_deactive_rate(p00): 0.862
+                         keep_active_rate(p11): 0.89
+                         rho: 0.751
+                         deactive_count: 26952
+                         active_count: 36117
+tp_40m's parameters for time_interval 1.0 
+                         keep_deactive_rate(p00): 0.836
+                         keep_active_rate(p11): 0.874
+                         rho: 0.711
+                         deactive_count: 23552
+                         active_count: 32789
+tp_40m's parameters for time_interval 1.5 
+                         keep_deactive_rate(p00): 0.822
+                         keep_active_rate(p11): 0.861
+                         rho: 0.683
+                         deactive_count: 21800
+                         active_count: 31039
+tp_40m's parameters for time_interval 2.0 
+                         keep_deactive_rate(p00): 0.812
+                         keep_active_rate(p11): 0.854
+                         rho: 0.666
+                         deactive_count: 20062
+                         active_count: 29211
+tp_40m's parameters for time_interval 2.5 
+                         keep_deactive_rate(p00): 0.802
+                         keep_active_rate(p11): 0.846
+                         rho: 0.648
+                         deactive_count: 18430
+                         active_count: 27651
+tp_40m's parameters for time_interval 3.0 
+                         keep_deactive_rate(p00): 0.791
+                         keep_active_rate(p11): 0.834
+                         rho: 0.625
+                         deactive_count: 16630
+                         active_count: 26375
+tp_40m's parameters for time_interval 3.5 
+                         keep_deactive_rate(p00): 0.785
+                         keep_active_rate(p11): 0.824
+                         rho: 0.608
+                         deactive_count: 15608
+                         active_count: 25216
+tp_40m's parameters for time_interval 4.0 
+                         keep_deactive_rate(p00): 0.782
+                         keep_active_rate(p11): 0.811
+                         rho: 0.592
+                         deactive_count: 14272
+                         active_count: 23995
+tp_40m's parameters for time_interval 4.5 
+                         keep_deactive_rate(p00): 0.763
+                         keep_active_rate(p11): 0.794
+                         rho: 0.557
+                         deactive_count: 12465
+                         active_count: 22394
+tp_60m's Markov Chain model Statics:
+tp_60m's parameters for time_interval 0.5 
+                         keep_deactive_rate(p00): 0.792
+                         keep_active_rate(p11): 0.844
+                         rho: 0.636
+                         deactive_count: 21582
+                         active_count: 30280
+tp_60m's parameters for time_interval 1.0 
+                         keep_deactive_rate(p00): 0.752
+                         keep_active_rate(p11): 0.823
+                         rho: 0.574
+                         deactive_count: 18320
+                         active_count: 26973
+tp_60m's parameters for time_interval 1.5 
+                         keep_deactive_rate(p00): 0.736
+                         keep_active_rate(p11): 0.809
+                         rho: 0.544
+                         deactive_count: 16921
+                         active_count: 25083
+tp_60m's parameters for time_interval 2.0 
+                         keep_deactive_rate(p00): 0.72
+                         keep_active_rate(p11): 0.789
+                         rho: 0.509
+                         deactive_count: 15411
+                         active_count: 23397
+tp_60m's parameters for time_interval 2.5 
+                         keep_deactive_rate(p00): 0.709
+                         keep_active_rate(p11): 0.773
+                         rho: 0.482
+                         deactive_count: 14263
+                         active_count: 22173
+tp_60m's parameters for time_interval 3.0 
+                         keep_deactive_rate(p00): 0.693
+                         keep_active_rate(p11): 0.757
+                         rho: 0.45
+                         deactive_count: 13099
+                         active_count: 21221
+tp_60m's parameters for time_interval 3.5 
+                         keep_deactive_rate(p00): 0.683
+                         keep_active_rate(p11): 0.744
+                         rho: 0.427
+                         deactive_count: 12208
+                         active_count: 20219
+tp_60m's parameters for time_interval 4.0 
+                         keep_deactive_rate(p00): 0.681
+                         keep_active_rate(p11): 0.74
+                         rho: 0.421
+                         deactive_count: 11384
+                         active_count: 19005
+tp_60m's parameters for time_interval 4.5 
+                         keep_deactive_rate(p00): 0.673
+                         keep_active_rate(p11): 0.739
+                         rho: 0.412
+                         deactive_count: 10448
+                         active_count: 17719
+tp_80m's Markov Chain model Statics:
+tp_80m's parameters for time_interval 0.5 
+                         keep_deactive_rate(p00): 0.85
+                         keep_active_rate(p11): 0.771
+                         rho: 0.621
+                         deactive_count: 23104
+                         active_count: 16529
+tp_80m's parameters for time_interval 1.0 
+                         keep_deactive_rate(p00): 0.825
+                         keep_active_rate(p11): 0.728
+                         rho: 0.552
+                         deactive_count: 19148
+                         active_count: 14394
+tp_80m's parameters for time_interval 1.5 
+                         keep_deactive_rate(p00): 0.802
+                         keep_active_rate(p11): 0.702
+                         rho: 0.504
+                         deactive_count: 17092
+                         active_count: 13342
+tp_80m's parameters for time_interval 2.0 
+                         keep_deactive_rate(p00): 0.779
+                         keep_active_rate(p11): 0.68
+                         rho: 0.458
+                         deactive_count: 15527
+                         active_count: 12231
+tp_80m's parameters for time_interval 2.5 
+                         keep_deactive_rate(p00): 0.762
+                         keep_active_rate(p11): 0.674
+                         rho: 0.436
+                         deactive_count: 14434
+                         active_count: 11330
+tp_80m's parameters for time_interval 3.0 
+                         keep_deactive_rate(p00): 0.745
+                         keep_active_rate(p11): 0.669
+                         rho: 0.413
+                         deactive_count: 13423
+                         active_count: 10671
+tp_80m's parameters for time_interval 3.5 
+                         keep_deactive_rate(p00): 0.731
+                         keep_active_rate(p11): 0.667
+                         rho: 0.398
+                         deactive_count: 12548
+                         active_count: 9893
+tp_80m's parameters for time_interval 4.0 
+                         keep_deactive_rate(p00): 0.716
+                         keep_active_rate(p11): 0.666
+                         rho: 0.382
+                         deactive_count: 11781
+                         active_count: 9227
+tp_80m's parameters for time_interval 4.5 
+                         keep_deactive_rate(p00): 0.706
+                         keep_active_rate(p11): 0.668
+                         rho: 0.373
+                         deactive_count: 10761
+                         active_count: 8535
+tp_120m's Markov Chain model Statics:
+tp_120m's parameters for time_interval 0.5 
+                         keep_deactive_rate(p00): 0.931
+                         keep_active_rate(p11): 0.728
+                         rho: 0.659
+                         deactive_count: 27391
+                         active_count: 6104
+tp_120m's parameters for time_interval 1.0 
+                         keep_deactive_rate(p00): 0.907
+                         keep_active_rate(p11): 0.691
+                         rho: 0.598
+                         deactive_count: 22091
+                         active_count: 5158
+tp_120m's parameters for time_interval 1.5 
+                         keep_deactive_rate(p00): 0.883
+                         keep_active_rate(p11): 0.672
+                         rho: 0.555
+                         deactive_count: 19660
+                         active_count: 4674
+tp_120m's parameters for time_interval 2.0 
+                         keep_deactive_rate(p00): 0.861
+                         keep_active_rate(p11): 0.666
+                         rho: 0.527
+                         deactive_count: 17955
+                         active_count: 4226
+tp_120m's parameters for time_interval 2.5 
+                         keep_deactive_rate(p00): 0.838
+                         keep_active_rate(p11): 0.65
+                         rho: 0.488
+                         deactive_count: 16561
+                         active_count: 3961
+tp_120m's parameters for time_interval 3.0 
+                         keep_deactive_rate(p00): 0.817
+                         keep_active_rate(p11): 0.649
+                         rho: 0.466
+                         deactive_count: 15323
+                         active_count: 3689
+tp_120m's parameters for time_interval 3.5 
+                         keep_deactive_rate(p00): 0.794
+                         keep_active_rate(p11): 0.644
+                         rho: 0.439
+                         deactive_count: 14309
+                         active_count: 3524
+tp_120m's parameters for time_interval 4.0 
+                         keep_deactive_rate(p00): 0.773
+                         keep_active_rate(p11): 0.649
+                         rho: 0.422
+                         deactive_count: 13416
+                         active_count: 3268
+tp_120m's parameters for time_interval 4.5 
+                         keep_deactive_rate(p00): 0.756
+                         keep_active_rate(p11): 0.652
+                         rho: 0.407
+                         deactive_count: 12295
+                         active_count: 3059
+tp_1000m's Markov Chain model Statics:
+tp_1000m's parameters for time_interval 0.5 
+                         keep_deactive_rate(p00): 0.993
+                         keep_active_rate(p11): 0.558
+                         rho: 0.551
+                         deactive_count: 15474
+                         active_count: 258
+tp_1000m's parameters for time_interval 1.0 
+                         keep_deactive_rate(p00): 0.989
+                         keep_active_rate(p11): 0.469
+                         rho: 0.458
+                         deactive_count: 12605
+                         active_count: 209
+tp_1000m's parameters for time_interval 1.5 
+                         keep_deactive_rate(p00): 0.98
+                         keep_active_rate(p11): 0.422
+                         rho: 0.402
+                         deactive_count: 11177
+                         active_count: 173
+tp_1000m's parameters for time_interval 2.0 
+                         keep_deactive_rate(p00): 0.968
+                         keep_active_rate(p11): 0.34
+                         rho: 0.308
+                         deactive_count: 10019
+                         active_count: 144
+tp_1000m's parameters for time_interval 2.5 
+                         keep_deactive_rate(p00): 0.954
+                         keep_active_rate(p11): 0.289
+                         rho: 0.243
+                         deactive_count: 9233
+                         active_count: 114
+tp_1000m's parameters for time_interval 3.0 
+                         keep_deactive_rate(p00): 0.936
+                         keep_active_rate(p11): 0.242
+                         rho: 0.178
+                         deactive_count: 8556
+                         active_count: 95
+tp_1000m's parameters for time_interval 3.5 
+                         keep_deactive_rate(p00): 0.918
+                         keep_active_rate(p11): 0.337
+                         rho: 0.255
+                         deactive_count: 8094
+                         active_count: 95
+tp_1000m's parameters for time_interval 4.0 
+                         keep_deactive_rate(p00): 0.901
+                         keep_active_rate(p11): 0.31
+                         rho: 0.211
+                         deactive_count: 7666
+                         active_count: 87
+tp_1000m's parameters for time_interval 4.5 
+                         keep_deactive_rate(p00): 0.881
+                         keep_active_rate(p11): 0.266
+                         rho: 0.147
+                         deactive_count: 7035
+                         active_count: 79

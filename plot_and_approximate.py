@@ -1,6 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import glob
+import json
+import os
 
 b = 1.0
 
@@ -70,11 +73,11 @@ def generate_approximate_data(data, scale=1, center=(20, 20), grid_size=10, a=1.
     scaled_center = (center[0] * scale, center[1] * scale)
     scaled_grid = grid_size / scale
 
-    print(f"values = {values}")
+    # print(f"values = {values}")
 
-    print(approximated_data.shape)
+    # print(approximated_data.shape)
 
-    print(f"center*scale = {center*scale}, grid_size/scale = {grid_size/scale}")
+    # print(f"center*scale = {center*scale}, grid_size/scale = {grid_size/scale}")
     for i in range(approximated_data.shape[0]):
         for j in range(approximated_data.shape[1]):
             distance = calculate_distance_from_center(i, j, center=scaled_center, grid_size=scaled_grid, a=a)
@@ -82,10 +85,10 @@ def generate_approximate_data(data, scale=1, center=(20, 20), grid_size=10, a=1.
                 if distance < r:
                     approximated_data.iat[i, j] = values[ir]
                     break
-    return approximated_data.astype('float')
+    return approximated_data.astype('float'), values
 
 
-def calculate_accuracy(original_data, approximated_data):
+def calculate_error(original_data, approximated_data):
     total_diff = 0
     count = 0
     for i in range(original_data.shape[0]):
@@ -98,35 +101,44 @@ def calculate_accuracy(original_data, approximated_data):
 
 def find_best_a(data):
     best_a = None
-    best_accuracy = float('inf')
+    best_error = float('inf')
     for a_val in np.arange(0.1, 2.1, 0.1):  # Iterating from 0.1 to 1.0
-        approximated_data = generate_approximate_data(data=data, scale=1, a=a_val)
-        accuracy = calculate_accuracy(data, approximated_data)
-        print(f"accuracy = {accuracy}, best_accuracy = {best_accuracy}, a = {a_val}")
-        if accuracy < best_accuracy:
-            best_accuracy = accuracy
+        approximated_data,_ = generate_approximate_data(data=data, scale=1, a=a_val)
+        error = calculate_error(data, approximated_data)
+        # print(f"error = {error}, best_error = {best_error}, a = {a_val}")
+        if error < best_error:
+            best_error = error
             best_a = a_val
-    return best_a, best_accuracy
+    return best_a, best_error
 
 
+file_list = glob.glob('data/All/XY_*.csv')
+os.makedirs('data/fitted_results', exist_ok=True)
 
-# file_path = '/home/horibe/workspace/perception_fitting/data/tp_rate.csv'  # Replace with your file path
-# file_path = '/home/horibe/workspace/perception_fitting/data/dist_error_mean.csv'  # Replace with your file path
-# file_path = '/home/horibe/workspace/perception_fitting/data/dist_error_std.csv'  # Replace with your file path
-# file_path = '/home/horibe/workspace/perception_fitting/data/yaw_error_mean.csv'  # Replace with your file path
-file_path = '/home/horibe/workspace/perception_fitting/data/yaw_error_std.csv'  # Replace with your file path
-data = load_csv(file_path)
+for file in file_list:
+    if 'count' in file:
+        continue
+    data = load_csv(file)
 
-best_a, best_accuracy = find_best_a(data)
+    best_a, best_error = find_best_a(data)
+    fig, axs = plt.subplots(1, 2, figsize=(12, 6))
+    plot_heat_map(data, axs[0], "Original Data")
+    approximated_data, values = generate_approximate_data(data, a=best_a)
+    plot_heat_map(approximated_data, axs[1], "Approximated Data")
+    file_name = file.split('/')[-1].split('.')[0]
+    plt.suptitle(f'{file} (a={best_a:.1f}), error={best_error:.2f}')
 
-# Plotting
-fig, axs = plt.subplots(1, 2, figsize=(12, 6))
-plot_heat_map(data, axs[0], "Original Data")
-approximated_data = generate_approximate_data(data, a=best_a)
-plot_heat_map(approximated_data, axs[1], "Approximated Data")
-# plt.suptitle(f'TP rate (a={best_a:.2f})')
-# plt.suptitle(f'dist error mean [m] (a={best_a:.1f})')
-# plt.suptitle(f'dist error std [m] (a={best_a:.1f})')
-# plt.suptitle(f'Yaw error mean [rad] (a={best_a:.1f})')
-plt.suptitle(f'Yaw error std [rad] (a={best_a:.1f})')
-plt.show()
+    file_save = file.replace('XY_', 'fitted_XY_').replace('csv', 'png').replace('/All/', '/fitted_results/')
+    plt.savefig(file_save)
+    plt.close()
+
+    # save the values to a json
+    result = dict()
+    result['r_range'] = r_range
+    result['values'] = values
+    result['a'] = best_a
+    result['b'] = b
+    result['error'] = best_error
+    json_file = file_save.replace('png', 'json')
+    with open(json_file, 'w') as f:
+        json.dump(result, f)
