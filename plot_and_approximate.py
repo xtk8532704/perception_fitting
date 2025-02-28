@@ -112,8 +112,13 @@ def find_best_a(data):
     return best_a, best_error
 
 
-file_list = glob.glob('data/All/XY_*.csv')
-os.makedirs('data/fitted_results', exist_ok=True)
+# root_path = 'data/Vehicle'
+# root_path = 'data/ALL'
+root_path = 'data/VRU'
+result_path = root_path + '/fitted_results'
+
+file_list = glob.glob(root_path + '/XY_*.csv')
+os.makedirs(result_path, exist_ok=True)
 
 for file in file_list:
     if 'count' in file:
@@ -128,7 +133,7 @@ for file in file_list:
     file_name = file.split('/')[-1].split('.')[0]
     plt.suptitle(f'{file} (a={best_a:.1f}), error={best_error:.2f}')
 
-    file_save = file.replace('XY_', 'fitted_XY_').replace('csv', 'png').replace('/All/', '/fitted_results/')
+    file_save = file.replace('XY_', 'fitted_XY_').replace('csv', 'png').replace(root_path, result_path)
     plt.savefig(file_save)
     plt.close()
 

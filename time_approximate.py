@@ -11,9 +11,13 @@ def exp_decay_with_const(x, amplitude, decay_rate, offset):
     return amplitude * np.exp(-decay_rate * x) + offset
 
 
-file_list = glob.glob('data/All/time_*.csv')
+# root_path = 'data/Vehicle'
+# root_path = 'data/ALL'
+root_path = 'data/VRU'
+output_dir = root_path + '/fitted_results'
 
-os.makedirs('data/fitted_results', exist_ok=True)
+file_list = glob.glob(root_path+'/time_*.csv')
+os.makedirs(output_dir, exist_ok=True)
 
 for file in file_list:
     if 'count' in file:
@@ -39,7 +43,7 @@ for file in file_list:
     plt.text(0.50, 0.50, formula_text,
              transform=plt.gca().transAxes, verticalalignment='top')
 
-    file_save = file.replace('time_', 'fitted_time_').replace('csv', 'png').replace('/All/', '/fitted_results/')
+    file_save = file.replace('time_', 'fitted_time_').replace('csv', 'png').replace(root_path, output_dir)
     plt.savefig(file_save)
     plt.close()
 
